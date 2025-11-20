@@ -93,7 +93,7 @@ export function Layout({ children }: LayoutProps) {
                 </header>
 
                 {/* Page Content - Scrollable area */}
-                <main className="flex-1 overflow-hidden bg-zinc-100">
+                <main className="flex-1 overflow-hidden bg-zinc-100 dark:bg-zinc-900">
                     {children}
                 </main>
             </div>

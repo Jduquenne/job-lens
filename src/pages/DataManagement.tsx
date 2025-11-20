@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Download, Upload, Database, Trash2, AlertTriangle, CheckCircle, Lightbulb } from 'lucide-react';
+import { Download, Upload, Database, Trash2, AlertTriangle, CheckCircle } from 'lucide-react';
 import { useIndexedDB } from '../hooks/useIndexedDB';
 
 export function DataManagement() {
@@ -81,7 +81,7 @@ export function DataManagement() {
     };
 
     return (
-        <div className="h-full flex flex-col overflow-y-auto gap-4 p-4">
+        <div className="h-full flex-1 flex-col overflow-y-auto gap-4 p-4">
             {/* Message Alert - Fixed at top */}
             {message && (
                 <div
@@ -99,22 +99,22 @@ export function DataManagement() {
                 </div>
             )}
 
-            {/* Conseils - Top full width */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 shrink-0">
+            {/* Conseils - Top full width
+            <div className="bg-blue-500 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 shrink-0">
                 <div className="flex items-start gap-3">
-                    <Lightbulb className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                    <Lightbulb className="w-5 h-5 text-blue-900 dark:text-blue-900 shrink-0 mt-0.5" />
                     <div>
-                        <h4 className="font-semibold text-blue-900 dark:text-blue-400 text-sm mb-1">
+                        <h4 className="font-semibold text-blue-900 dark:text-blue-900 text-sm mb-1">
                             💡 Conseils d'utilisation
                         </h4>
-                        <ul className="space-y-0.5 text-s text-blue-800 dark:text-blue-300">
+                        <ul className="space-y-0.5 text-s text-blue-00 dark:text-blue-900">
                             <li>• Exportez régulièrement vos données pour éviter toute perte</li>
                             <li>• Gardez vos exports dans un endroit sûr (cloud, clé USB, etc.)</li>
                             <li>• Les données sont stockées localement dans votre navigateur</li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Grid 2x2 - Actions */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1 min-h-0">
@@ -153,8 +153,8 @@ export function DataManagement() {
                 {/* Export */}
                 <div className="bg-zinc-50 dark:bg-zinc-800 rounded-lg p-4 shadow-sm border border-zinc-200 dark:border-zinc-700 flex flex-col">
                     <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
-                            <Download className="w-5 h-5 text-blue-500" />
+                        <div className="p-2 bg-blue-300 dark:bg-blue-500/70 rounded-lg">
+                            <Download className="w-5 h-5 text-blue-100/70" />
                         </div>
                         <div>
                             <h3 className="text-base font-bold text-zinc-900 dark:text-white">
@@ -173,7 +173,7 @@ export function DataManagement() {
                     <button
                         onClick={handleExport}
                         disabled={applications.length === 0}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium text-sm"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-400/70 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium text-sm"
                     >
                         <Download className="w-4 h-4" />
                         Exporter ({applications.length})
@@ -184,7 +184,7 @@ export function DataManagement() {
                 <div className="bg-zinc-50 dark:bg-zinc-800 rounded-lg p-4 shadow-sm border border-zinc-200 dark:border-zinc-700 flex flex-col">
                     <div className="flex items-center gap-3 mb-3">
                         <div className="p-2 bg-green-100 dark:bg-green-900/20 rounded-lg">
-                            <Upload className="w-5 h-5 text-green-500" />
+                            <Upload className="w-5 h-5 text-emerald-400/70" />
                         </div>
                         <div>
                             <h3 className="text-base font-bold text-zinc-900 dark:text-white">
@@ -211,7 +211,7 @@ export function DataManagement() {
                         id="import-file"
                     />
                     <label htmlFor="import-file" className="flex-1 flex items-end">
-                        <span className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium cursor-pointer text-sm">
+                        <span className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-400/70 text-white rounded-lg hover:bg-green-600 transition-colors font-medium cursor-pointer text-sm">
                             <Upload className="w-4 h-4" />
                             {importing ? 'Import...' : 'Choisir fichier'}
                         </span>
