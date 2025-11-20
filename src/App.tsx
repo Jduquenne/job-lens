@@ -5,7 +5,7 @@ import { DataManagement } from './pages/DataManagement';
 
 function App() {
   return (
-    <BrowserRouter basename="/job-lens">
+    <BrowserRouter basename="/job-lens/">
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
