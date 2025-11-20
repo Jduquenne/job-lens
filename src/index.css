@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Reset et configuration de base pour le layout */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  @apply dark:bg-zinc-900! text-zinc-900! dark:text-white transition-colors;
+}
+
+select:focus > option:checked {
+  @apply bg-zinc-700! text-zinc-900! dark:text-white!;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+option:hover {
+  @apply bg-zinc-700 dark:bg-zinc-700 text-white;
+}
+
+/* Scrollbar personnalisée (optionnel) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-zinc-100 dark:bg-zinc-800;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-600 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 dark:bg-zinc-500;
+}
